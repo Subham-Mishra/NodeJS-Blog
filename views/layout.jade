@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+  body
+    .navbar.navbar-inverse.navbar-fixed-top(role='navigation')(style='background-color: #003366;')
+       .navbar-header
+         button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+           span.sr-only Toggle nav
+           span.icon-bar
+           span.icon-bar
+           span.icon-bar
+         a.navbar-brand(style='background-color: #006666;color:floralwhite;')(href='#') NodeJS Blog
+       .container-fluid
+         .navbar-collapse.collapse
+           ul.nav.navbar-nav.navbar-right
+            li
+             a(href='/') Home
+            li
+             a(href='/posts/add') Add Post
+            li
+             a(href='/categories/add') Add Category
+            li
+             a(href='/posts/delete') Delete Post
+    img.logo(src='/images/nodebloglogo.png')
+    != messages()
+    block content
+    footer
+     p NodeBlog &copy; 2018

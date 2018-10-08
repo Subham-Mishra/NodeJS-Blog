@@ -1,0 +1,18 @@
+extends layout
+
+block content
+ ul.errors
+  if errors
+   each error, i in errors
+    li.alert.alert-danger #{error.msg}
+ form(method='post', enctype="multipart/form-data")
+  .form-group
+   input.btn.btn-danger(name='reset', form-action='/posts/delete', type='submit',value='Reset The Blog' style="width:100%;") 
+  .form-group
+   h1=titleOne
+   each post,i in posts
+    hr
+    h3 #{post.title}
+    input.btn.btn-danger(name='submit', form-action='/posts/delete/', type='submit',value='Delete Post')
+    br
+   hr 
